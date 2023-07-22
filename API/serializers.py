@@ -17,7 +17,6 @@ class ProductSerializer(serializers.ModelSerializer):
 
 
 class BuySerializer(serializers.ModelSerializer):
-    product = serializers.PrimaryKeyRelatedField(queryset=Product.objects.all())
 
     class Meta:
         model = Buy
