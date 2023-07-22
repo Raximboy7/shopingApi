@@ -11,7 +11,6 @@ from rest_framework.generics import RetrieveUpdateDestroyAPIView, ListCreateAPIV
 
 
 
-
 class CategoryViewSet(viewsets.ModelViewSet):
     queryset = Category.objects.all()
     serializer_class = CategorySerializer
