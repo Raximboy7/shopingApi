@@ -26,7 +26,7 @@ class Product(models.Model):
 class Buy(models.Model):
     quantity = models.IntegerField()
     product = models.ForeignKey(Product, on_delete=models.CASCADE)
-    phone = models.IntegerField(max_length=12)
+    phone = models.CharField(max_length=12)
     
     def __str__(self):
         return self.product.title
