@@ -33,20 +33,6 @@ class ProductViewSet(viewsets.ModelViewSet):
 
 
 
-# class BuyList(ListCreateAPIView):
-#     def buy(self,request, pk=None):
-#         if  request.method == 'GET':
-#             product = Product.objects.get(pk=pk)
-#             serializer = ProductSerializer(product)
-#             return Response(serializer.data)
-#         elif request.method == 'POST':
-#             serializer = BuySerializer(data=request.data)
-#             if serializer.is_valid():
-#                 serializer.save()
-#                 return Response(serializer.data, status=201)
-#             return Response(serializer.errors, status=400)
-
-
 class BuyList(ListCreateAPIView):
     serializer_class = BuySerializer
 
@@ -65,13 +51,11 @@ class BuyList(ListCreateAPIView):
 
 
 
-
-
 class BuyViewSet(viewsets.ModelViewSet):
     queryset = Buy.objects.all()
     serializer_class = BuySerializer
 
-#
+
 class BuyDetail(RetrieveUpdateDestroyAPIView):
     queryset = Buy.objects.all()
     serializer_class = BuySerializer

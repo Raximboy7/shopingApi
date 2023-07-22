@@ -21,3 +21,5 @@ class BuySerializer(serializers.ModelSerializer):
     class Meta:
         model = Buy
         fields = ('quantity', 'phone', 'product')
+
+
