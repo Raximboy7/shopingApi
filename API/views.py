@@ -32,7 +32,7 @@ class ProductViewSet(viewsets.ModelViewSet):
 
 
 
-class BuyList(ListCreateAPIView):
+class BuyOrder(ListCreateAPIView):
     serializer_class = BuySerializer
 
     def get(self, request, pk=None):
@@ -53,8 +53,9 @@ class BuyList(ListCreateAPIView):
 class BuyViewSet(viewsets.ModelViewSet):
     queryset = Buy.objects.all()
     serializer_class = BuySerializer
+    permission_classes = [IsAdminOrReadOnly]
 
 
-class BuyDetail(RetrieveUpdateDestroyAPIView):
-    queryset = Buy.objects.all()
-    serializer_class = BuySerializer
+# class BuyDetail(RetrieveUpdateDestroyAPIView):
+#     queryset = Buy.objects.all()
+#     serializer_class = BuySerializer
