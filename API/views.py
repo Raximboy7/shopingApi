@@ -8,7 +8,7 @@ from rest_framework import status
 from rest_framework.views import APIView
 from rest_framework.decorators import api_view
 from rest_framework.generics import RetrieveUpdateDestroyAPIView, ListCreateAPIView
-
+from django.shortcuts import redirect
 
 
 class CategoryViewSet(viewsets.ModelViewSet):
@@ -45,7 +45,7 @@ class BuyList(ListCreateAPIView):
         serializer = BuySerializer(data=request.data)
         if serializer.is_valid():
             serializer.save()
-            return Response(serializer.data, status=201)
+            return redirect('buy') 
         return Response(serializer.errors, status=400)
 
 
